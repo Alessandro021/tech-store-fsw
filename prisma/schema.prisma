@@ -1,5 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+/// - https://github.com/tailwindlabs/prettier-plugin-tailwindcss
 ////// - https://www.prisma.io/docs/concepts/components/prisma-client/computed-fields
 
 generator client {
