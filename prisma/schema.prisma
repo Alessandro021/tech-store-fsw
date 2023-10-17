@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+////// - https://www.prisma.io/docs/concepts/components/prisma-client/computed-fields
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Category {
+  id String @id @default(uuid())
+  name String
+  slug String
+  imageUrl String
+  products Product[]
+}
+
+model Product {
+  id String @id @default(uuid())
+  name String
+  slug String
+  description String
+  basePrice Decimal @db.Decimal(8, 2)
+  imageUrl String
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id])
+  discountPorcentage Int @default(0)
+}
