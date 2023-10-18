@@ -16,17 +16,18 @@ import PromoBanner from "./components/promo-banner"
         slug: "keyboards"
       }}
     })
+
   return (
-   <div>
+   <div className="flex flex-col gap-8">
     <PromoBanner
       src={"/banner-home-01.png"}
       alt="banner de desconto"
       />
-    <div className="mt-8 p-5">
+    <div className=" p-5">
       <Categories />
     </div>
 
-    <div className="mt-8">
+    <div>
       <SectionTitle>Ofertas</SectionTitle>
       <ProductList products={deals} />
     </div>
@@ -36,10 +37,15 @@ import PromoBanner from "./components/promo-banner"
       alt="banner de desconto de ate 55% em mouses"
     />
 
-    <div className="mt-8">
+    <div>
       <SectionTitle >Teclados</SectionTitle>
       <ProductList products={keyboards} />
     </div>
+
+    <PromoBanner
+      src={"/banner-home-03.png"}
+      alt="banner de desconto de ate 20% em fones de ouvido"
+    />
 
    </div>
   )
