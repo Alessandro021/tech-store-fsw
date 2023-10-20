@@ -8,7 +8,7 @@ import {signIn, signOut, useSession} from "next-auth/react"
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
-import Cart from "./Cart";
+import Cart from "./cart";
 
 const Header = () => {
 
