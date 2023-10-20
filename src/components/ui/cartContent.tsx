@@ -10,7 +10,7 @@ import { Button } from "./button";
 import { createCheckout } from "@/actions/checkout";
 import {loadStripe} from "@stripe/stripe-js"
 
-const Cart = () => {
+const CartContent = () => {
     const {products, subTotal, total, totalDiscount} = useContext(CartContext)
 
     const handleFinishPurchaseClick = async () => {
@@ -82,4 +82,4 @@ const Cart = () => {
      );
 }
  
-export default Cart;
+export default CartContent;

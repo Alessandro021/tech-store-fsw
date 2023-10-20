@@ -8,8 +8,7 @@ import {signIn, signOut, useSession} from "next-auth/react"
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
-
-import Cart from "./cart";
+import CartContent from "./cartContent";
 
 const Header = () => {
 
@@ -121,7 +120,7 @@ const Header = () => {
           </SheetTrigger>
 
           <SheetContent>
-                <Cart />
+                <CartContent />
           </SheetContent>
         </Sheet>
       </Card>
