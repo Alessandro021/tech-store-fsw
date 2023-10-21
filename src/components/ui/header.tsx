@@ -9,10 +9,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
 import CartContent from "./cartContent";
+import { useContext } from "react";
+import { CartContext } from "@/provider/cart";
 
 const Header = () => {
 
   const {status, data} = useSession();
+  const {products} = useContext(CartContext)
 
   const handleLoginClick = async () => {
     await signIn()
@@ -122,8 +125,13 @@ const Header = () => {
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button size={"icon"} variant={"outline"}>
+            <Button size={"icon"} variant={"outline"} className="relative">
               <ShoppingCartIcon />
+                {products.length > 0 && (
+                   <div className="absolute rounded-full left-7 top-7 bg-primary flex items-center justify-center w-6 h-6">
+                      <span className="font-bold text-xs">{products.length}</span>
+                   </div>
+                )}
             </Button>
           </SheetTrigger>
 
